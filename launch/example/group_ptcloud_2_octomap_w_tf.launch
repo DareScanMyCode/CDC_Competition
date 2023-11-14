@@ -1,0 +1,35 @@
+<!-- 
+  Example launch file for octomap_server mapping: 
+  Listens to incoming PointCloud2 data and incrementally builds an octomap. 
+  The data is sent out in different representations. 
+
+  Copy this file into your workspace and adjust as needed, see
+  www.ros.org/wiki/octomap_server for details  
+-->
+<launch>
+
+	<param name = "map_resolution_1" type = "double" value = "0.75" />
+	<param name = "map_resolution_2" type = "double" value = "0.50" />
+	<param name = "map_resolution_3" type = "double" value = "0.25" />
+
+    <group ns="jurong">
+      <param name = "uav_name" type = "string" value = "jurong" />
+      <node pkg="caric_competition_xmu" type="ptcloud_2_octomap" name="ptcloud_2_octomap" output="screen">
+      </node>
+    </group>
+
+    <group ns="raffles">
+      <param name = "uav_name" type = "string" value = "raffles" />
+      <node pkg="caric_competition_xmu" type="ptcloud_2_octomap" name="ptcloud_2_octomap" output="screen">
+      </node>		
+    </group>
+
+    <!-- <group ns="test_occ">
+      <param name = "uav_name" type = "string" value = "raffles" />
+      <node pkg="caric_competition_xmu" type="get_occupancy" name="get_occupancy" output="screen">
+      </node>		 -->
+    <!-- </group> -->
+
+    
+	
+</launch>
