@@ -1,2 +1,2 @@
 # CDC_Competition
-git repo for cdc
+Git repo for cdc(2023 4th)
