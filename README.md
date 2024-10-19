@@ -53,14 +53,4 @@
 - We have observe that, somtimes, the program does not launch well. One method to solve this problem is that we can reload a terminate, and wait for some time for ros to kill the previous processes.
 - We also observe that somtimes Lidar does not work well on our computers.
 - "Error: The length of line segment AB is zero" is common, just ignore it.
-## Any Problem running the code, PLEASE contact us (STUDENT)
-- emails:
-  1. Bangwei Zhao, bangweizhao@stu.xmu.edu.cn
-  2. Can Tang, can.tang@foxmail.com
-  3. Jiarui Guo, jiaruiguo@stu.xmu.edu.cn
-  4. Xianglin Chen, chenxianglin22@qq.com
-  5. Yiqun Wang, 23220230156596@stu.xmu.edu.cn
 
-- discord
-  - Bangwei Zhao (ZhaoBangwei in CARIC group)
-  - Jiarui Guo (Jiarui Guo in CARIC group)
