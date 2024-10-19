@@ -1,0 +1,33 @@
+<launch>
+
+    <group ns="jurong">
+        <node pkg="caric_competition_xmu" type="test_in_sight" name="test_in_sight" output="screen">
+            <param name="node_name" value="jurong" />
+        </node>
+    </group>
+
+    <group ns="changi">
+        <node pkg="caric_competition_xmu" type="test_in_sight" name="test_in_sight" output="screen">
+            <param name="node_name" value="changi" />
+        </node>
+    </group>
+
+    <group ns="raffles">
+        <node pkg="caric_competition_xmu" type="test_in_sight" name="test_in_sight" output="screen">
+            <param name="node_name" value="raffles" />
+        </node>
+    </group>
+
+    <group ns="sentosa">
+        <node pkg="caric_competition_xmu" type="test_in_sight" name="test_in_sight" output="screen">
+            <param name="node_name" value="sentosa" />
+        </node>
+    </group>
+
+    <group ns="nanyang">
+        <node pkg="caric_competition_xmu" type="test_in_sight" name="test_in_sight" output="screen">
+            <param name="node_name" value="nanyang" />
+        </node>
+    </group>
+
+</launch>

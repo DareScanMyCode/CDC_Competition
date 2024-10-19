@@ -1,0 +1,33 @@
+<launch>
+
+    <node pkg="caric_competition_xmu" type="inspector" name="inspector_jurong" output="screen">
+
+        <param name="uav_plus_name" value="jurong" />
+        <param name="takeoff_height"  type="double" value="30"  />
+        <param name="hovering_height" type="double" value="35.0" />
+
+    </node>
+    
+    <node pkg="caric_competition_xmu" type="inspector" name="inspector_raffles" output="screen">
+
+        <param name="uav_plus_name" value="raffles" />
+        <param name="takeoff_height"  type="double" value="30"  />
+        <param name="hovering_height" type="double" value="35.0" />
+
+    </node>
+
+    <group ns="jurong">
+      <param name = "uav_name" type = "string" value = "jurong" />
+      <node pkg="caric_competition_xmu" type="ptcloud_2_octomap" name="ptcloud_2_octomap" output="screen">
+      </node>
+    </group>
+
+    <group ns="raffles">
+      <param name = "uav_name" type = "string" value = "raffles" />
+      <node pkg="caric_competition_xmu" type="ptcloud_2_octomap" name="ptcloud_2_octomap" output="screen">
+      </node>        
+    </group>
+
+
+
+</launch>

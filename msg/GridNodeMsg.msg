@@ -1,0 +1,9 @@
+Header header
+float64 x
+float64 y
+float64 z
+bool is_occupied
+int32 is_inspected
+bool need_to_inspect
+bool is_octo_inspected
+bool in_flat

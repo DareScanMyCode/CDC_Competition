@@ -1,0 +1,9 @@
+geometry_msgs/Point pos
+int32 x
+int32 y
+int32 z
+bool is_visited
+bool is_in_frontier
+bool is_bad
+bool is_obstacle
+float64 heuristic

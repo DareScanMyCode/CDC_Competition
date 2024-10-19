@@ -1,0 +1,62 @@
+<launch>
+
+  <param name = "map_resolution_1" type = "double" value = "0.75" />
+	<param name = "map_resolution_2" type = "double" value = "0.50" />
+	<param name = "map_resolution_3" type = "double" value = "0.25" />
+
+    <group ns="jurong">
+      <param name = "uav_name" type = "string" value = "jurong" />
+      <node pkg="caric_competition_xmu" type="ptcloud_2_octomap" name="ptcloud_2_octomap" output="screen">
+      </node>
+    </group>
+
+    <group ns="raffles">
+      <param name = "uav_name" type = "string" value = "raffles" />
+      <node pkg="caric_competition_xmu" type="ptcloud_2_octomap" name="ptcloud_2_octomap" output="screen">
+      </node>		
+    </group>
+
+
+
+  <!-- changi -->
+  <node pkg="caric_competition_xmu" type="controller_test" name="controller_test_changi" output="screen">
+    <param name="uav_name" type="string" value="changi" />
+    <!-- 在此添加其他参数，如果有的话 -->
+  </node>
+  <!-- sentosa -->
+  <node pkg="caric_competition_xmu" type="controller_test" name="controller_test_sentosa" output="screen">
+    <param name="uav_name" type="string" value="sentosa" />
+    <!-- 在此添加其他参数，如果有的话 -->
+  </node>
+  <!-- nanyang -->
+  <node pkg="caric_competition_xmu" type="controller_test" name="controller_test_nanyang" output="screen">
+    <param name="uav_name" type="string" value="nanyang" />
+    <!-- 在此添加其他参数，如果有的话 -->
+  </node>
+
+
+  <!-- 参数设置 -->
+  <!-- changi -->
+  <node pkg="caric_competition_xmu" type="subscriber_test" name="subscriber_test_changi" output="screen">
+    <param name="uav_name" value="changi" />
+    <param name="uav_name1" value="sentosa" />
+    <param name="uav_name2" value="nanyang" />
+    <!-- 你的photo_taker节点所需的其他参数 -->
+  </node>
+    <!-- sentosa -->
+  <node pkg="caric_competition_xmu" type="subscriber_test" name="subscriber_test_sentosa" output="screen">
+    <param name="uav_name" value="sentosa" />
+    <param name="uav_name1" value="changi" />
+    <param name="uav_name2" value="nanyang" />
+    <!-- 你的photo_taker节点所需的其他参数 -->
+  </node>
+    <!-- nanyang -->
+  <node pkg="caric_competition_xmu" type="subscriber_test" name="subscriber_test_nanyang" output="screen">
+    <param name="uav_name" value="nanyang" />
+    <param name="uav_name1" value="changi" />
+    <param name="uav_name2" value="sentosa" />
+    <!-- 你的photo_taker节点所需的其他参数 -->
+  </node>
+
+ 
+</launch>

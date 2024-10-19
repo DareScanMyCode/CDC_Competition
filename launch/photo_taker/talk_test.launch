@@ -1,0 +1,33 @@
+<launch>
+    
+    
+
+    <!-- <group ns="jurong">
+        <node pkg="2023caric_competition_xmu" type="ppcom_jurong_talker.py" name="ppcom_jurong" output="screen"   />
+    </group>
+
+    <group ns="changi">
+        <node pkg="2023caric_competition_xmu" type="ppcom_changi_talker.py" name="ppcom_changi" output="screen"   />
+    </group> -->
+    <!-- <node pkg="2023caric_competition_xmu" type="ppcom_jurong_talker.py" name="ppcom_jurong" output="screen"   /> -->
+
+    <!-- <node pkg="2023caric_competition_xmu" type="test_geo_talker.py" name="ppcom_geo" output="screen"   /> -->
+    <group ns="changi">
+        <arg name="node_name" value="changi" />
+        <node pkg="caric_competition_xmu" type="communicator" name="communicator" output="screen">
+            <param  name="node_name" value="cahngi" />
+        </node>
+    </group>
+
+    <group ns="jurong">
+        
+        <node pkg="caric_competition_xmu" type="communicator" name="communicator" output="screen" >
+            <param  name="node_name" value="jurong" />
+        </node>
+    </group>
+
+
+    <node pkg="caric_mission" type="ppcom_router.py" name="ppcom_router" output="screen"   />
+
+    
+</launch>

@@ -1,0 +1,56 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/paobuliao/Desktop/record/codes/devel/include/**",
+        "/home/paobuliao/ws_caric/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/active_perception/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/bspline/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/bspline_opt/include/**",
+        "/home/paobuliao/ws_caric/src/caric_competition_xmu_0927/include/**",
+        "/home/paobuliao/ws_caric/src/caric_mission/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/exploration_manager/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/extern_utils/lkh_tsp_solver/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/uav_simulator/local_sensing/include/**",
+        "/home/paobuliao/ws_caric/src/rotors_simulator/mav_lowlevel_attitude_controller/include/**",
+        "/home/paobuliao/ws_caric/src/rotors_simulator/mav_comm/mav_msgs/include/**",
+        "/home/paobuliao/ws_caric/src/rotors_simulator/mav_comm/mav_planning_msgs/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/uav_simulator/Utils/multi_map_server/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/path_searching/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/plan_env/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/plan_manage/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/poly_traj/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/uav_simulator/Utils/pose_utils/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/uav_simulator/Utils/quadrotor_msgs/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/roadmap/include/**",
+        "/home/paobuliao/ws_caric/src/rotors_simulator/rotors_control/include/**",
+        "/home/paobuliao/ws_caric/src/rotors_simulator/rotors_gazebo_plugins/include/**",
+        "/home/paobuliao/ws_caric/src/rotors_simulator/rotors_hil_interface/include/**",
+        "/home/paobuliao/ws_caric/src/rotors_simulator/rotors_joy_interface/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/uav_simulator/so3_control/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/uav_simulator/so3_disturbance_generator/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/uav_simulator/so3_quadrotor_simulator/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/test/include/**",
+        "/home/paobuliao/ws_caric/src/traj_gennav/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/traj_utils/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/uav_simulator/Utils/uav_utils/include/**",
+        "/home/paobuliao/ws_caric/src/unicon/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/utils/include/**",
+        "/home/paobuliao/ws_caric/src/velodyne_simulator/velodyne_gazebo_plugins/include/**",
+        "/home/paobuliao/Desktop/record/codes/src/CXLPlanner/visualization_utils/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

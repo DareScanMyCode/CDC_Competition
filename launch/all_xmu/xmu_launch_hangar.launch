@@ -1,0 +1,122 @@
+<launch>
+
+    <!-- <arg name="scenario" default="mbs" /> -->
+    <arg name="scenario" default="hangar" />
+    <!-- <arg name="scenario" default="crane" /> -->
+
+    <!-- launch simulator -->
+    <include file="$(find caric_mission)/launch/run_$(arg scenario).launch" />
+
+    <!-- For visualization -->
+    <node name="odom2tf" pkg="caric_mission" type="odom2tf.py" output="screen"/>
+
+    <!-- for communication -->
+    <!-- <node name="ppcom_router" pkg="caric_mission" type="ppcom_router.py" output="screen" /> -->
+
+    <param name = "map_resolution_1" type = "double" value = "0.75" />
+    <param name = "map_resolution_2" type = "double" value = "0.50" />
+    <param name = "map_resolution_3" type = "double" value = "0.25" />
+
+    <!-- GCS -->
+    <group ns="gcs">
+        <node pkg="caric_competition_xmu" type="gcs" name="gcs" output="screen">
+            <param name="node_name" value="gcs" />
+        </node>
+        <node pkg="caric_competition_xmu" type="get_points_in_faces.py" name="get_points_in_faces" output="screen" />
+    </group>
+    
+    <!-- UAV jurong -->
+    <group ns="jurong">
+        <!-- ptcloud_2_octomap -->
+        <param name = "uav_name" type = "string" value = "jurong" />
+        <node pkg="caric_competition_xmu" type="ptcloud_2_octomap" name="ptcloud_2_octomap" output="screen">
+        </node>
+
+        <!-- inspector jurong -->
+        <node pkg="caric_competition_xmu" type="inspector" name="inspector_jurong" output="screen">
+
+            <param name="uav_plus_name" value="jurong" />
+            <param name="takeoff_height"  type="double" value="30"  />
+            <param name="hovering_height" type="double" value="35.0" />
+
+        </node>
+    
+    </group>
+
+    <!-- UAV raffles  -->
+    <group ns="raffles">
+        <!-- ptcloud_2_octomap -->
+        <param name = "uav_name" type = "string" value = "raffles" />
+        <node pkg="caric_competition_xmu" type="ptcloud_2_octomap" name="ptcloud_2_octomap" output="screen">
+        </node>
+        
+        <!-- inspector raffles -->
+        <node pkg="caric_competition_xmu" type="inspector" name="inspector_raffles" output="screen">
+
+            <param name="uav_plus_name" value="raffles" />
+            <param name="takeoff_height"  type="double" value="30"  />
+            <param name="hovering_height" type="double" value="35.0" />
+
+        </node>
+        
+                
+    </group>
+
+
+
+    <!-- UAV changi -->
+    <group ns="changi">
+        <!-- changi -->
+        <node pkg="caric_competition_xmu" type="controller_test" name="controller_test_changi" output="screen">
+            <param name="node_name" type="string" value="changi" />
+            <param name="takeoff_height"  type="double" value="5"  />
+            <param name="hovering_height" type="double" value="35.0" />
+        <!-- 在此添加其他参数，如果有的话 -->
+        </node>
+        <!-- 参数设置 -->
+        <!-- changi -->
+        <node pkg="caric_competition_xmu" type="subscriber_test" name="subscriber_test_changi" output="screen">
+            <param name="node_name" value="changi" />
+            <param name="uav_id" value="2"/>
+            <param name="uav_name1" value="sentosa" />
+            <param name="uav_name2" value="nanyang" />
+        </node>
+    </group>
+
+    <!-- UAV sentosa -->
+    <group ns="sentosa">
+        <!-- sentosa -->
+        <node pkg="caric_competition_xmu" type="controller_test" name="controller_test_sentosa" output="screen">
+            <param name="node_name" type="string" value="sentosa" />
+            <param name="takeoff_height"  type="double" value="5"  />
+            <param name="hovering_height" type="double" value="35.0" />
+        <!-- 在此添加其他参数，如果有的话 -->
+        </node>
+        <!-- sentosa -->
+        <node pkg="caric_competition_xmu" type="subscriber_test" name="subscriber_test_sentosa" output="screen">
+            <param name="node_name" value="sentosa" />
+            <param name="uav_id" value="3"/>
+            <param name="uav_name1" value="changi" />
+            <param name="uav_name2" value="nanyang" />
+        </node>
+    </group>
+
+    <!-- UAV nanyang -->
+    <group ns="nanyang">
+        <!-- nanyang -->
+        <node pkg="caric_competition_xmu" type="controller_test" name="controller_test_nanyang" output="screen">
+            <param name="node_name" type="string" value="nanyang" />
+            <param name="takeoff_height"  type="double" value="5"  />
+            <param name="hovering_height" type="double" value="35.0" />
+        <!-- 在此添加其他参数，如果有的话 -->
+        </node>
+
+        <node pkg="caric_competition_xmu" type="subscriber_test" name="subscriber_test_nanyang" output="screen">
+            <param name="node_name" value="nanyang" />
+            <param name="uav_id" value="4"/>
+            <param name="uav_name1" value="changi" />
+            <param name="uav_name2" value="sentosa" />
+        </node>
+    </group>
+
+</launch>
